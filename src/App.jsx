@@ -12,20 +12,13 @@ function App(){
     ];
 
     const [data, setData] = useState(raw)
-    const handleClick = (changingIndex) =>{
-        setData((prev)=>{
-            return prev.map((item, index)=>{
-                if(index === changingIndex) return {...item, friend: !item.friend}
-                return item;
-            })
-        })
-    }
+    
 
     return (
         <>
         <div className="w-full h-screen bg-zinc-100 flex justify-center items-center gap-10">
             {data.map((item, index)=>(
-                <Card key={index} index={index} handleClick={handleClick} values={item} />
+                <Card key={index} index={index}  values={item} />
                 
                 
             ))}
